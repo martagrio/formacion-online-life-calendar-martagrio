@@ -35,9 +35,11 @@ chooseMood (e) {
 							<label htmlFor="sad"> :(
 							 <input type="radio" name="mood" id="sad" value=":(" onChange={this.chooseMood} />
 						 </label>
-						 <label htmlFor="message">Message</label>
+						 <label htmlFor="message"
+						 	className= {this.state.mood === ":)" ? "text__message" : "hidden"}
+						 >Message</label>
 						 <input type="text" 
-						 	className= {"text__message" + this.state.mood === ":)" ? "show" : ""}
+						 	className= {this.state.mood === ":)" ? "label__message" : "hidden"}
 						 	name="message" 
 							id="message" 
 							placeholder="Why is it a good day?"/>

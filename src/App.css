@@ -1,11 +1,14 @@
 .app {
+	margin: 0;
   text-align: center;
+	height: 100vh;
+	background-color: aqua;
 }
 
-.text__message {
+.hidden {
 	display: none;
 }
 
-.text__message .show {
-	background-color: aqua;
+.text__message {
+	background-color: rgba(54, 68, 68, 0.336);
 }
