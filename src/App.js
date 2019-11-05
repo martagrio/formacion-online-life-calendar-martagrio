@@ -31,7 +31,6 @@ class App extends React.Component {
 					</div>
 					<div className="calendar__box">
 						<div className="day__box">
-						ASCO DE VIDA, TETE
 						</div>
 					</div>
 				</main>
