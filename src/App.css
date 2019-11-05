@@ -1,3 +1,11 @@
 .app {
   text-align: center;
 }
+
+.text__message {
+	display: none;
+}
+
+.text__message .show {
+	background-color: aqua;
+}

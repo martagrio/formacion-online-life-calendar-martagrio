@@ -5,10 +5,19 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 		this.state = {
-			days: []
+			days: [],
+			mood: ""
 		}
+		this.chooseMood = this.chooseMood.bind(this);
   }
 
+chooseMood (e) {
+	const currentMood = e.currentTarget.value;
+	this.setState({
+		mood: currentMood
+	});
+
+}
   render() {
     return (
       <div className="app">
@@ -21,13 +30,17 @@ class App extends React.Component {
 						<input type="date" name="date" id="date" min="2019-01-01" max="2019-12-31"/>
 						<p className="text__mood">mood:</p>
 							<label htmlFor="happy"> :)
-								<input type="radio" name="mood" id="happy" value=":)"/>
+								<input type="radio" name="mood" id="happy" value=":)" onChange={this.chooseMood} />
 							</label>
 							<label htmlFor="sad"> :(
-							 <input type="radio" name="mood" id="sad" value=":("/>
+							 <input type="radio" name="mood" id="sad" value=":(" onChange={this.chooseMood} />
 						 </label>
 						 <label htmlFor="message">Message</label>
-						 <input type="text" className="text__message" name="message" id="message"/>
+						 <input type="text" 
+						 	className= {"text__message" + this.state.mood === ":)" ? "show" : ""}
+						 	name="message" 
+							id="message" 
+							placeholder="Why is it a good day?"/>
 					</div>
 					<div className="calendar__box">
 						<div className="day__box">
